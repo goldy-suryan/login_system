@@ -1,5 +1,6 @@
 <?php
   session_start();
+  include_once "functions.php";
 ?>
 
 
@@ -29,10 +30,10 @@
       </div>
       <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav">
-          <li class="active"><a href="index.php">Home</a></li>
-          <li><a href="about.php">About</a></li>
-          <li><a href="blog.php">Blog</a></li>
-          <li><a href="contact.php">Contact Us</a></li>
+          <li <?=selectClass("index")?>><a href="index.php">Home</a></li>
+          <li <?=selectClass("about")?>><a href="about.php">About</a></li>
+          <li <?=selectClass("blog")?>><a href="blog.php">Blog</a></li>
+          <li <?=selectClass("contact")?>><a href="contact.php">Contact Us</a></li>
         </ul>
         <?php
           if(isset($_SESSION["username"])) {
@@ -41,8 +42,8 @@
                   </form>';
           } else {
             echo '<ul class="nav navbar-nav navbar-right">
-                    <li><a href="signup.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                    <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                    <li '.selectClass("signup").'><a href="signup.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                    <li '.selectClass("login").'><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
                   </ul>';
           }
         ?>
