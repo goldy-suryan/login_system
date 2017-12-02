@@ -1,3 +1,8 @@
+<?php
+  session_start();
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -29,10 +34,18 @@
           <li><a href="blog.php">Blog</a></li>
           <li><a href="contact.php">Contact Us</a></li>
         </ul>
-        <ul class="nav navbar-nav navbar-right">
-          <li><a href="signup.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-          <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-        </ul>
+        <?php
+          if(isset($_SESSION["username"])) {
+            echo '<form action="db/db.logout.php" method="POST" id="logout">
+                    <button type="submit" name="submit" class="btn btn-default"><span class="glyphicon glyphicon-log-out"></span> Logout</button>
+                  </form>';
+          } else {
+            echo '<ul class="nav navbar-nav navbar-right">
+                    <li><a href="signup.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                    <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                  </ul>';
+          }
+        ?>
       </div>
     </div>
   </nav>
