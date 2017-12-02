@@ -7,7 +7,7 @@ include "header.php";
         <div class="page-header">
           <h2>Login</h2>
         </div>
-        <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post" class="form-horizontal">
+        <form action="db/db.login.php" method="post" class="form-horizontal">
           <div class="form-group">
             <label class="control-label col-md-3" for="username">Username / Email:</label>
             <div class="col-md-9">
@@ -17,7 +17,7 @@ include "header.php";
           <div class="form-group">
             <label class="control-label col-md-3" for="password">Password:</label>
             <div class="col-md-9">
-              <input type="text" class="form-control" id="pwd" placeholder="password" name="password">
+              <input type="password" class="form-control" id="pwd" placeholder="password" name="password">
             </div>
           </div>
           <button type="submit" name="submit" class="btn btn-default pull-right">Submit</button>
