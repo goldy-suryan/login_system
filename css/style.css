@@ -115,3 +115,20 @@ label {
 button[type="reset"] {
     margin-right: 10px !important;
 }
+
+/*======= Logout ========*/
+
+form#logout {
+    float: right;
+    margin-top: 7px;
+}
+
+form#logout > button {
+    background: none;
+    border: none;
+    color: #9d9d9d;
+}
+
+form#logout > button:hover {
+    color: #fff;
+}
